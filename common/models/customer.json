@@ -1,0 +1,30 @@
+{
+  "name": "Customer",
+  "plural": "customers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isAdmin": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongoDB": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "groceryDB",
+    "password": "",
+    "name": "mongoDB",
+    "user": "",
+    "connector": "mongodb"
   }
 }

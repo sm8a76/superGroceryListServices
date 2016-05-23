@@ -31,5 +31,29 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Grocery": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Supermarket": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "List": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "ListItem": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Customer": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Quote": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }

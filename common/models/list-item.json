@@ -1,0 +1,41 @@
+{
+  "name": "ListItem",
+  "plural": "listitems",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "quantity": {
+      "type": "number",
+      "required": true,
+      "default": "1"
+    },
+    "enabled": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "enoughInHouse": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "expirationDate": {
+      "type": "date"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isBought": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
