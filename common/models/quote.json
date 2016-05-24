@@ -22,6 +22,9 @@
       "type": "number"
     }
   },
+  "mixins": {
+    "TimeStamp": true
+  },      
   "validations": [],
   "relations": {
     "grocery": {

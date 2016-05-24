@@ -18,6 +18,9 @@
       "type": "string"
     }
   },
+  "mixins": {
+    "TimeStamp": true
+  },      
   "validations": [],
   "relations": {
     "quotes": {
