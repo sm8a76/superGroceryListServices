@@ -24,7 +24,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "lists": {
+      "type": "hasMany",
+      "model": "List",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -13,7 +13,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "customer": {
+      "type": "belongsTo",
+      "model": "Customer",
+      "foreignKey": ""
+    },
+    "listItems": {
+      "type": "hasMany",
+      "model": "ListItem",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

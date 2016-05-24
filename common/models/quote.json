@@ -23,7 +23,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "grocery": {
+      "type": "belongsTo",
+      "model": "Grocery",
+      "foreignKey": ""
+    },
+    "supermarket": {
+      "type": "belongsTo",
+      "model": "Supermarket",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

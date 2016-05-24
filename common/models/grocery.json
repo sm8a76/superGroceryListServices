@@ -26,7 +26,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "quotes": {
+      "type": "hasMany",
+      "model": "Quote",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
