@@ -6,26 +6,20 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "TimeStamp": true
+  },
   "properties": {
-    "isAdmin": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "email": {
-      "type": "string",
-      "required": true
-    },
     "firstName": {
       "type": "string"
     },
     "lastName": {
       "type": "string"
+    },
+    "email": {
+      "type": "string"
     }
   },
-  "mixins": {
-    "TimeStamp": true
-  },      
   "validations": [],
   "relations": {
     "lists": {
@@ -34,6 +28,19 @@
       "foreignKey": ""
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }
