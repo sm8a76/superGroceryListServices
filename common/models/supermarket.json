@@ -43,9 +43,9 @@
       "permission": "ALLOW"
     },
     {
-      "accessType": "READ",
+      "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "$authenticated",
+      "principalId": "admin",
       "permission": "ALLOW"
     }
   ],
