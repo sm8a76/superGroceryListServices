@@ -29,5 +29,22 @@ module.exports = function(app) {
         });
       });
     });
+    
+    
+    MongoDB.automigrate('Supermarket', function(err) {
+       if (err) throw (err);
+       var Supermarket = app.models.Supermarket;
 
+       Supermarket.create([
+        {name: 'HEB Puerta de Hierro'},
+        {name: 'Walmart Cumbres'},
+        {name: 'Soriana Lincoln'}
+      ], function(err, supermarkets) {
+        if (err) throw (err);
+        console.log('Supermarket created and populated.');
+      });
+    });    
+  
+    
+    
 };
