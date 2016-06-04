@@ -20,7 +20,7 @@
     "customer": {
       "type": "belongsTo",
       "model": "Customer",
-      "foreignKey": ""
+      "foreignKey": "customerId"
     },
     "listItems": {
       "type": "hasMany",
