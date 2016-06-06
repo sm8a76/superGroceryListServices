@@ -21,6 +21,10 @@
     "unit": {
       "type": "string"
     },
+    "currency": {
+      "type": "string",
+      "default": "MXP"
+    },    
     "discountIfAny": {
       "type": "number"
     }
