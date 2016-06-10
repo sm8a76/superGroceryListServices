@@ -24,7 +24,7 @@
     "currency": {
       "type": "string",
       "default": "MXP"
-    },    
+    },
     "discountIfAny": {
       "type": "number"
     }
@@ -34,12 +34,12 @@
     "grocery": {
       "type": "belongsTo",
       "model": "Grocery",
-      "foreignKey": "groceryId"
+      "foreignKey": ""
     },
     "supermarket": {
       "type": "belongsTo",
       "model": "Supermarket",
-      "foreignKey": "superId"
+      "foreignKey": ""
     }
   },
   "acls": [

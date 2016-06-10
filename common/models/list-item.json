@@ -42,12 +42,12 @@
     "list": {
       "type": "belongsTo",
       "model": "List",
-      "foreignKey": "listId"
+      "foreignKey": ""
     },
     "grocery": {
       "type": "belongsTo",
       "model": "Grocery",
-      "foreignKey": "groceryId"
+      "foreignKey": ""
     }
   },
   "acls": [
