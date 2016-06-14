@@ -19,7 +19,8 @@ Grocery.search = function(criteria, callback){
       Quote.find({groceryId: grocery.id}, function(error, quotes){
         if(error) callback(error);
 
-        var chepeastQuote;
+        var chepeastQuote = undefined;
+        var moreExpensiveQuote = undefined;
         var initialPrice = -1;
         var cheapestPrice = initialPrice;
         var availableIn = '';
@@ -34,10 +35,23 @@ Grocery.search = function(criteria, callback){
             }
           }
 
+          if (moreExpensiveQuote == undefined) {
+            moreExpensiveQuote = quote;
+          } else {
+            if(quote.price > moreExpensiveQuote.price){
+              moreExpensiveQuote = quote;
+            }
+          }
+
           Supermarket.findOne({id: quote.supermarketId}, function(error, supermarket){
             if(error) callback(error);
 
             availableIn += supermarket.name + ', ';
+
+            if(quote === chepeastQuote){
+              cheapestSuper = supermarket.name;
+            }
+
           });
 
 
@@ -45,8 +59,16 @@ Grocery.search = function(criteria, callback){
 
         item.available = availableIn;
         item.price = chepeastQuote.price;
-        item.bestPriceAt = undefined;
-        item.label = undefined;
+        item.bestPriceAt = cheapestSuper;
+
+        var diff = 0;
+        if(moreExpensiveQuote != undefined && chepeastQuote != undefined){
+          diff = chepeastQuote.price - moreExpensiveQuote.price;
+        }
+
+        if(diff < 0){
+          item.label = diff + '';
+        }
 
       });
 
@@ -63,7 +85,9 @@ Grocery.search = function(criteria, callback){
 
 Grocery.remoteMethod('search', {
   accepts: {arg: 'criteria', type: 'string'},
-  returns: {arg: 'results', type: 'array'}
+  returns: {arg: 'results', type: 'array'},
+  http: {path: '/search', verb: 'get', status: 201, errorStatus: 400},
+  description: 'Operation for searching groceries and getting their details such as quotes and supermarkets.'
 });
 
 
